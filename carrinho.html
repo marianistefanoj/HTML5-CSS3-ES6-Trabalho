@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5, CSS3 e ES6</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!--Titulo do Site em destaque usando bootstrap-->
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">HTML5, CSS3, JS</h1>
+            <p class="lead">Utilizando Bootstrap 4.</p>
+        </div>
+    </header>
+    <!--Fim do titulo no container-->
+    <!--Navebar contendo Principal / Cadastro / Shop (atividade final)-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand navbar-light" href="carrinho.html">(Atividade Final)</a>
+        <a class="navbar-brand" href="index.html">Principal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="formulario.html">Formulário</a>
+                <a class="nav-link active" href="carrinho.html">Itens/Carrinho</a>
+            </div>
+        </div>
+    </nav>
+    <!--Fim da Navbar -->
+    <!--Campos fomulário -->
+    
+    <main>
+        <!--Area de movimentar artigos-->
+        <div class="row container-fluid">
+            <section id="produtos" class="col-lg-8"> <!--a section vem antes da dropzone pois se viesse dentro e arrastasse o item para 'baixo' 
+                                                         ela saia da tag section e ficava ainda dentro da dropzone assim com a dropzone dentro da section ele esta sempde dentro dekas-->
+                <div id="dropzone2" class="row container-fluid" style="padding: 20px;" ondrop="drop(event)" ondragover="allowDrop(event)"
+                    ondragleave="leave(event)">
+                    <div class="col-lg-12 border">
+                        <!--Artigos-->
+                        <label><strong>Itens a Venda</strong></label>
+                        <label>(Arraste de volta para remover itens do carrinho)</label>
+                        <div id="1" class="col-lg-12" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                            <article><p>
+
+                                <img src="https://ae01.alicdn.com/kf/Ha7e63e8371c94798a226a99aff57afd4q/XrayDisk-2-5-Sata3-Ssd-120gb-128gb-240gb-256gb-60gb-480gb-512GB-1TB-Hdd-Internal-Solid.jpg_480x480q90.jpg_.webp" width="200" height="auto" draggable="false">
+                                <div>
+                                    <label><strong>SSD XrayDisk 128gb - Sata 3</strong></label>
+                                    <p>500 mb/s; velocidade de gravação (máximo): 500 mb/s.</p>
+                                    <input type="number" name="qtde" min="1" max="10" value="1" enabled>
+                                    <input type="text" name="valor" value="110.28" disabled>
+                                </div>
+                            </p></article>
+                        </div>
+                        <div id="2" class="col-lg-12" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                            <article><p>
+                                <img src="https://ae01.alicdn.com/kf/Hd839b81be98947769a470649fb00b924X.jpg" width="200" height="auto" draggable="false">
+                                <div>
+                                    <label><strong>Memória DDR4 8Gb 2666Mhz Juhor</strong></label>
+                                    <p>2666Mhz CL 19-19-19-43 1.2v</p>
+                                    <input type="number" name="qtde" min="1" max="20" value="1" enabled>
+                                    <input type="text" name="valor" value="193.56" disabled>
+                                </div>
+                            </p></article>
+                        </div>
+                        <div id="3" class="col-lg-12" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                            <article><p>
+                                <img src="https://ae01.alicdn.com/kf/Uae3aa61eb1274052bd89e070226c3bdcN.jpg" width="200" height="auto" draggable="false">
+                                <div>
+                                    <label><strong>NVME Kingspec 1Tb</strong></label>
+                                    <p>2000Mb/s read/write</p>
+                                    <input type="number" name="qtde" min="1" max="20" value="1" enabled>
+                                    <input type="text" name="valor" value="561.58" disabled>
+                                </div>   
+                            </article>
+                        </p></div>
+                    </div>
+                </div>
+            </section>
+            <!--Tem um bug depende como arrasta pra dropzone ele nao calcula o valor, se arrastar de dentro da dropzone para a mesma, ele carrega o item dentro da section e calcula o valor corretamente-->
+            <div id="dropzone" class="col-lg-4" style="padding: 10px;" ondrop="drop(event)" ondragover="allowDrop(event)"
+                  ondragleave="leave(event)">
+                <section id="checkout" class="border">
+                    <section id="carrinho">
+                        <label><strong>Carrinho </strong>(Arraste aqui para incluir itens do carrinho)</label>
+                    </section>
+                </section>
+            
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Total itens: </th>
+                                <td id="total-itens"></td>
+                            </tr>
+                            <tr>
+                                <th>Total: </th>
+                                <td id="valor-total"></td>
+                            </tr>
+                            </thead>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </main> 
+    <!--Fim Area de movimentar artigos-->
+        
+    <!--Footer-->
+    <footer class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div>Stéfano Júlio Mariani</div>
+            <div>
+                <strong>Pós-Graduação em Desenvolvimento de Aplicações Web e Mobile</strong>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous">
+        </script>
+
+        <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+                ev.currentTarget.style.border = "3px dotted #ccc";
+                ev.currentTarget.style.background = "#eee";
+            }
+
+            function denyDrop(ev) {
+                ev.stopPropagation();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function leave(ev) {
+                ev.preventDefault();
+                ev.target.style.border = "none";
+                ev.target.style.background = "inherit";
+            }
+
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+                ev.target.style.border = "none";
+                ev.target.style.background = "inherit";
+            }
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+</body>
+
+</html>

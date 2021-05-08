@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HwBr</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Adiciona o bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--Titulo do Site em destaque usando bootstrap-->
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">HTML5, CSS3, JS</h1>
+                <p class="lead">Utilizando Bootstrap 4.</p>
+            </div>
+        </header>
+        <!--Fim do titulo no container-->
+        <!--Navebar contendo Principal / Cadastro / Shop (atividade final)-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand navbar-light" href="arrinho.html">(Atividade Final)</a>
+            <a class="navbar-brand" href="index.html">Principal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="formulario.html">Formulário</a>
+                    <a class="nav-link active" href="carrinho.html">Itens/Carrinho</a>
+                </div>
+            </div>
+        </nav>
+        <!--Fim da Navbar -->
+        <main>
+            <!--Area de movimentar artigos-->
+            <div class="container-fluid">
+                <div id="dropzone" class="row" style="padding: 10px;" ondrop="drop(event)" ondragover="allowDrop(event)"
+                      ondragleave="leave(event)">
+                </div>
+                <div id="dropzone2" class="row" style="padding: 10px;" ondrop="drop(event)" ondragover="allowDrop(event)"
+                     ondragleave="leave(event)">
+                    <!--Artigos-->
+                    <div id="new1" class="col-lg-4" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                        <article>
+                            <h3>
+                                Crosshair VIII Impact e Ryzen XT – Overclock extremo (LN2) e resultados - The Overclock Page
+                            </h3>
+                            <h5>
+                                POR GIANCARLO C. DALMEDICO "NOMS"
+                            </h5>
+                            <h6>
+                                outubro 18, 2020
+                            </h6>
+                            <img src="imagens/img03.jpeg" width="400" height="auto" class="img-fluid" draggable="false"> 
+                            <br><br> 
+                            <a class="btn btn-primary" href="https://theoverclockingpage.com/2020/10/18/crosshair-viii-impact-e-ryzen-xt-overclock-extremo-ln2-e-resultados/">
+                                Leia Mais
+                            </a>
+                        </article>
+                    </div>
+
+                    <div id="new2" class="col-lg-4" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                        <article>
+                            <h3>
+                                Congelando a GALAX RTX3090 com LN2 – Experiência e resultados! - The Overclock Page
+                            </h3>
+                            <h5>
+                                POR GIANCARLO C. DALMEDICO "NOMS"
+                            </h5>
+                            <h6>
+                                fevereiro 21, 2021
+                            </h6>
+                            <img src="imagens/img02.jpeg" width="400" height="auto" class="img-fluid" draggable="false"> 
+                            <br><br> 
+                            <a class="btn btn-primary" href="https://theoverclockingpage.com/2021/02/21/congelando-a-galax-rtx3090-com-ln2-experiencia-e-resultados/">
+                                Leia Mais
+                            </a>
+                        </article>
+                    </div>
+                    <div id="new3" class="col-lg-4" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                        <article>
+                            <h3>
+                                HyperX and MSI Set Bring DDR4 OC at 7200MHz - Guru3D
+                            </h3>
+                            <h6>
+                                Hilbert Hagedoorn on: 04/27/2021 08:14 AM
+                            </h6>
+                            <img src="imagens/img01.jpeg" width="400" height="auto" class="img-fluid" draggable="false">
+                            <br><br> 
+                            <a class="btn btn-primary" href="https://adrenaline.com.br/noticias/v/68745/memoria-hyperx-predator-bate-recorde-de-overclock-com-frequencia-de-7200mhz">
+                                Leia Mais
+                            </a>
+                            <a class="btn btn-primary" href="https://hwbot.org/submission/4732528_toppc_memory_frequency_ddr4_sdram_3600.2_mhz">
+                                Link Sub no HWBOT
+                            </a>
+                            <a class="btn btn-primary" href="https://valid.x86.fr/a8qx4z">
+                                Link do Validate
+                            </a>
+                        </article>
+                    </div>
+                </div>
+                <!--Fim dos Artigos-->
+            </div>
+        </main> 
+        <!--Fim Area de movimentar artigos-->
+
+        <!--Footer-->
+        <footer class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div>Stéfano Júlio Mariani</div>
+                <div>
+                    <strong>Pós-Graduação em Desenvolvimento de Aplicações Web e Mobile</strong>
+                </div>
+            </div>
+        </footer>
+        <!--Footer-->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous">
+        </script>
+
+        <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+                ev.currentTarget.style.border = "3px dotted #ccc";
+                ev.currentTarget.style.background = "#eee";
+            }
+
+            function denyDrop(ev) {
+                ev.stopPropagation();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function leave(ev) {
+                ev.preventDefault();
+                ev.target.style.border = "none";
+                ev.target.style.background = "inherit";
+            }
+
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+                ev.target.style.border = "none";
+                ev.target.style.background = "inherit";
+            }
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+
+    </body>
+</html>
